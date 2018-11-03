@@ -28,7 +28,7 @@ link: http://g.recordit.co/96AizOGYRB.gif
 `TODO://` Simple flashcard app
 
 ### App Walk-though
-`TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
+`TODO://` http://g.recordit.co/gh1cEEWqFH.gif
 
 <img src="YOUR_GIF_URL_HERE" width=200><br>
 

@@ -1,9 +1,29 @@
-📝 `NOTE` Paste this template at the top of your existing `README.md` file from the last lab.
+
+## Lab 3
+
+### App Description
+Simple flashcard app, added saving and scrolling through multiple flashcards
+
+### App Walk-though
+
+<img src="YOUR_GIF_URL_HERE" width=200><br>
+link: http://g.recordit.co/VarakrdDRZ.gif
+
+
+## Required
+- [x] User can browse through multiple flashcards
+- [x] User can re-open the app and see previously created flashcards
+- [x] Push code to GitHub
+## Optional
+- [ ] User can delete a flashcard
+- [ ] User can edit existing flashcard
+- [ ] User can store multiple choice questions
+
 
 ## Lab 2
 
 ### App Description
-`TODO://` Simple flashcard app
+Simple flashcard app
 
 ### App Walk-though
 
@@ -22,17 +42,15 @@ link: http://g.recordit.co/96AizOGYRB.gif
 - [ ] User can add multiple choice answers in the creation screen
 
 
-## Flashcard
+## Flashcard Lab 1
 
 ### App Description
-`TODO://` Simple flashcard app
+Simple flashcard app
 
 ### App Walk-though
-`TODO://` http://g.recordit.co/gh1cEEWqFH.gif
+http://g.recordit.co/gh1cEEWqFH.gif
 
 <img src="YOUR_GIF_URL_HERE" width=200><br>
-
-`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
 
 ## Required
 - [x] Create New Project in Xcode

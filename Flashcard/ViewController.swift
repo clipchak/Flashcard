@@ -61,32 +61,89 @@ class ViewController: UIViewController {
         
     }
 
+    //reaction to user tapping on a flashcard
     @IBAction func didTapOnFlashcard(_ sender: Any) {
-        if(QuestionLabel.isHidden){
-            QuestionLabel.isHidden = false;
+       flipFlashcard()
+    }
+    
+    //animation to flip the flashcard
+    func flipFlashcard(){
+        UIView.transition(with: cardContainer, duration: 0.3, options: .transitionFlipFromRight, animations: {
+            if(self.QuestionLabel.isHidden){
+                self.QuestionLabel.isHidden = false;
+            }
+            else{
+                self.QuestionLabel.isHidden = true
+            }
+        })
+    }
+    
+    func animateNextCardOut(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.cardContainer.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        }, completion: { finished in
+            
+            //update labels
+            self.updateLabels()
+            
+            //run other animation
+            self.animateNextCardIn()
+            
+        })
+    }
+    
+    func animateNextCardIn(){
+        //start on the right side (dont animate this)
+        cardContainer.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        
+        //animate card going back to its original position
+        UIView.animate(withDuration: 0.3){
+            self.cardContainer.transform = CGAffineTransform.identity
         }
-        else{
-            QuestionLabel.isHidden = true
+    }
+    
+    func animatePrevCardOut(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.cardContainer.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        }, completion: { finished in
+            
+            //update labels
+            self.updateLabels()
+            
+            //run other animation
+            self.animatePrevCardIn()
+            
+        })
+    }
+    
+    func animatePrevCardIn(){
+        //start on the right side (dont animate this)
+        cardContainer.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        
+        //animate card going back to its original position
+        UIView.animate(withDuration: 0.3){
+            self.cardContainer.transform = CGAffineTransform.identity
         }
     }
     
     @IBAction func didTapOnNext(_ sender: Any) {
+        //animates the card transition
+        animateNextCardOut()
+        
         //update index
         currentIndex = currentIndex + 1
         
-        //update labels
-        updateLabels()
         
         //update buttons
         updateNextPrevButtons()
     }
     
     @IBAction func didTapOnPrev(_ sender: Any) {
+        //animates the card transition
+        animatePrevCardOut()
+        
         //update index
         currentIndex = currentIndex - 1
-        
-        //update labels
-        updateLabels()
         
         //update buttons
         updateNextPrevButtons()
